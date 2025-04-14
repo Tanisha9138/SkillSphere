@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Role</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .role-box {
+      background: linear-gradient(135deg, #6a0dad, #2b1055);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      width: 350px;
+    }
+
+    .role-box h1 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .role-box button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      background: linear-gradient(to right, #6f00ff, #00dbde);
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .role-box button:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="role-box">
+    <h1>Welcome <%= username %>!</h1>
+    <p>Select your role to continue:</p>
+    <form action="/dashboard" method="POST">
+      <input type="hidden" name="username" value="<%= username %>">
+      <button type="submit" name="role" value="recruiter">Sign in as Recruiter</button>
+      <button type="submit" name="role" value="freelancer">Sign in as Freelancer</button>
+    </form>
+  </div>
+</body>
+</html>

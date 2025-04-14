@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="/css/style1.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+  
+    <div class="welcome-section">
+      <h1>Welcome Back <span>.!</span></h1>
+      <form action="/skip" method="GET">
+        <button type="submit" class="skip-btn"><i>Skip the lag ?</i></button>
+      </form>
+    </div>
+
+    <div class="login-card">
+      <h2>Login</h2>
+      <p>Glad you're back.!</p>
+
+      <% if (typeof message !== 'undefined') { %>
+        <div class="message"><%= message %></div>
+      <% } %>
+
+      <form action="/select-role" method="POST">
+        <input type="text" name="username" placeholder="Username" value="<%= typeof username !== 'undefined' ? username : '' %>" required />
+        
+        <input type="password" name="password" placeholder="Password" required />
+
+        <div class="remember">
+          <input type="checkbox" id="remember" name="remember" />
+          <label for="remember">Remember me</label>
+        </div>
+
+        <button type="submit" class="login-btn">Login</button>
+        <a href="#" class="forgot">Forgot password ?</a>
+      </form>
+
+      <div class="divider">Or</div>
+
+      <div class="social-login">
+        <img src="https://www.pngmart.com/files/16/Google-Logo-PNG-Image.png" alt="Google" />
+        <img src="https://static.vecteezy.com/system/resources/previews/018/930/698/original/facebook-logo-facebook-icon-transparent-free-png.png" alt="Facebook" />
+        <img src="https://pngimg.com/uploads/github/github_PNG80.png" alt="GitHub" />
+      </div>
+
+      <p class="signup">Don't have an account? <a href="#">Signup</a></p>
+
+      <div class="footer-links">
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Support</a>
+        <a href="#">Customer Care</a>
+      </div>
+    </div>
+
+    <div class="bg-circle top"></div>
+    <div class="bg-circle bottom"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<%- include('partials/header') %>
+
+<section class="job-detail">
+  <div class="container">
+    <div class="job-detail-container">
+      <div class="job-main">
+        <h1><%= job.title %></h1>
+        
+        <div class="seller-overview">
+          <div class="seller-info">
+            <div class="avatar">
+              <span><%= job.seller.charAt(0).toUpperCase() %></span>
+            </div>
+            <div class="seller-meta">
+              <h3><%= job.seller %></h3>
+              <div class="rating">
+                <span class="stars"><i class="fas fa-star"></i> <%= job.rating %></span>
+                <span class="reviews">(128 reviews)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="job-gallery">
+          <img src="/images/<%= job.image %>" alt="<%= job.title %>" class="main-image">
+        </div>
+        
+        <div class="job-description">
+          <h2>About This Service</h2>
+          <p><%= job.description %></p>
+        </div>
+      </div>
+      
+      <div class="job-sidebar">
+        <div class="pricing-card">
+          <div class="package-header">
+            <h3>Standard Package</h3>
+          </div>
+          <div class="package-price">
+            <h2><%= job.price %></h2>
+          </div>
+          <div class="package-description">
+            <p>I will create a professional design with revisions included</p>
+          </div>
+          <div class="package-details">
+            <div class="detail-item">
+              <i class="fas fa-clock"></i>
+              <span>2 Days Delivery</span>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-sync"></i>
+              <span>3 Revisions</span>
+            </div>
+          </div>
+          <button class="continue-btn">Continue</button>
+          <button class="contact-seller-btn">Contact Seller</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="related-jobs">
+      <h2>Related Services</h2>
+      <div class="services-grid">
+        <% relatedJobs.forEach(job => { %>
+          <a href="/job/<%= job.id %>" class="service-card">
+            <div class="service-image">
+              <img src="/images/<%= job.image %>" alt="<%= job.title %>">
+            </div>
+            <div class="service-info">
+              <h3><%= job.title %></h3>
+              <p class="price"><%= job.price %></p>
+            </div>
+          </a>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

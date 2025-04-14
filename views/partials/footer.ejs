@@ -1,0 +1,58 @@
+<footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Categories</h3>
+          <ul>
+            <% categories.slice(0, 5).forEach(category => { %>
+              <li><a href="/jobs?category=<%= category.id %>"><%= category.name %></a></li>
+            <% }); %>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>About</h3>
+          <ul>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press & News</a></li>
+            <li><a href="#">Partnerships</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Help & Support</a></li>
+            <li><a href="#">Trust & Safety</a></li>
+            <li><a href="#">Selling on Freelancer</a></li>
+            <li><a href="#">Buying on Freelancer</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Community</h3>
+          <ul>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Forum</a></li>
+            <li><a href="#">Community Standards</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="copyright">
+          <p>&copy; SkillSphere Platform <%= new Date().getFullYear() %>. All rights reserved.</p>
+        </div>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="/js/main.js"></script>
+  </body>
+  </html>
+  

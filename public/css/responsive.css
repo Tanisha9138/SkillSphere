@@ -1,0 +1,108 @@
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .job-detail-container {
+      grid-template-columns: 3fr 2fr;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .hero-content h1 {
+      font-size: 36px;
+    }
+    
+    .business-promo .container {
+      flex-direction: column;
+    }
+    
+    .promo-content {
+      padding-right: 0;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    .category-grid {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    
+    .services-grid {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+    
+    .job-detail-container {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    
+    .pricing-card {
+      max-width: 500px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .main-nav {
+      display: none;
+    }
+    
+    .mobile-menu-toggle {
+      display: block;
+    }
+    
+    .hero-content h1 {
+      font-size: 28px;
+    }
+    
+    .hero {
+      padding: 60px 0;
+    }
+    
+    .category-grid {
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 15px;
+    }
+    
+    .services-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .copyright {
+      margin-bottom: 20px;
+    }
+    
+    .social-links a {
+      margin: 0 8px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .popular-searches a {
+      margin: 3px;
+      font-size: 12px;
+    }
+    
+    .job-detail-container {
+      margin-top: -20px;
+    }
+    
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  

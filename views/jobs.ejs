@@ -1,0 +1,50 @@
+<%- include('partials/header') %>
+
+<section class="jobs-header">
+  <div class="container">
+    <h1>Browse Jobs</h1>
+    <div class="filter-options">
+      <div class="category-filter">
+        <select id="category-select" onchange="location = this.value;">
+          <option value="/jobs">All Categories</option>
+          <% categories.forEach(category => { %>
+            <option value="/jobs?category=<%= category.id %>" <%= selectedCategory === category.id ? 'selected' : '' %>>
+              <%= category.name %>
+            </option>
+          <% }); %>
+        </select>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="jobs-grid">
+  <div class="container">
+    <% if (jobs.length === 0) { %>
+      <div class="no-jobs">
+        <h2>No jobs found</h2>
+        <p>Try adjusting your search or filter criteria</p>
+      </div>
+    <% } else { %>
+      <div class="services-grid">
+        <% jobs.forEach(job => { %>
+          <a href="/job/<%= job.id %>" class="service-card">
+            <div class="service-image">
+              <img src="/images/<%= job.image %>" alt="<%= job.title %>">
+            </div>
+            <div class="service-info">
+              <h3><%= job.title %></h3>
+              <div class="seller-info">
+                <span class="seller-name"><%= job.seller %></span>
+                <span class="rating"><i class="fas fa-star"></i> <%= job.rating %></span>
+              </div>
+              <p class="price"><%= job.price %></p>
+            </div>
+          </a>
+        <% }); %>
+      </div>
+    <% } %>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
