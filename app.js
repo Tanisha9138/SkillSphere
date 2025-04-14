@@ -2,13 +2,10 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Set up EJS as the view engine
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
-
-// Sample data (in production, use a database)
 const categories = [
   { id: 1, name: "Graphics & Design", icon: "palette" },
   { id: 2, name: "Digital Marketing", icon: "chart-line" },
@@ -41,14 +38,12 @@ const jobs = [
     rating: 4.8,
     image: "logo.jpg"
   },
-  // More job listings would be here
 ];
 
-// Routes
 app.get('/', (req, res) => {
   res.render('index', { 
     categories: categories,
-    popularJobs: jobs.slice(0, 6), // First 6 jobs for popular section
+    popularJobs: jobs.slice(0, 6), 
     pageTitle: 'Freelancer Marketplace'
   });
 });
