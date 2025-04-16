@@ -42,7 +42,6 @@
     height: auto;
   }
   
-  /* Header Styles */
   .main-header {
     padding: 20px 0;
     border-bottom: 1px solid var(--medium-gray);
@@ -86,8 +85,6 @@
     font-size: 24px;
     cursor: pointer;
   }
-  
-  /* Hero Section */
   .hero {
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i0.wp.com/ahnscustom.com/wp-content/uploads/2022/09/h1_hero-bg.png?ssl=1');
     background-size: cover;
@@ -97,7 +94,6 @@
     text-align: center;
   }
 
-  /* Add this to your CSS */
 .slideshow-background {
     position: absolute;
     top: 0;
@@ -163,8 +159,6 @@
     25% { opacity: 0 }
     100% { opacity: 0 }
   }
-  
-  /* Add a geometric pattern overlay */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -230,30 +224,6 @@
       transform: translateY(0);
     }
   }
-  
-  /* .hero-content h1 {
-    font-size: 48px;
-    margin-bottom: 30px;
-  } */
-  
-  /* .search-container {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .search-container form {
-    display: flex;
-    position: relative;
-  }
-  
-  .search-container input {
-    width: 100%;
-    padding: 15px 20px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
   .search-container button {
     position: absolute;
     right: 5px;
@@ -355,8 +325,6 @@
     background: rgba(255, 255, 255, 0.35);
     transform: translateY(-2px);
   }
-  
-  /* Trusted By Section */
   .trusted-by {
     padding: 30px 0;
     background: var(--light-gray);
@@ -376,41 +344,10 @@
     font-weight: 600;
     color: var(--dark-gray);
   }
-  
-  /* Categories Section */
   .categories {
     padding: 60px 0;
   }
   
-  /* .category-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 20px;
-    text-align: center;
-  }
-  
-  .category-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-    transition: transform 0.3s;
-  }
-  
-  .category-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .category-card .icon {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-  }
-  
-  .category-card h3 {
-    font-size: 14px;
-    font-weight: 600;
-  } */
   .category-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -469,8 +406,6 @@
     font-size: 18px;
     color: #333;
   }
-  
-  /* Services Section */
   .popular-services {
     padding: 60px 0;
   }
@@ -586,8 +521,6 @@
   .cta-button:hover {
     background: #19a463;
   }
-  
-  /* Pro Section */
   .pro-section {
     background-color: #f1fef7;
     padding: 60px 0;
@@ -627,8 +560,6 @@
   .feature p {
     color: var(--dark-gray);
   }
-  
-  /* Jobs Page */
   .jobs-header {
     background-color: var(--light-gray);
     padding: 40px 0;
@@ -661,8 +592,6 @@
     text-align: center;
     padding: 50px 0;
   }
-  
-  /* Job Detail Page */
   .job-detail {
     padding: 60px 0;
   }
@@ -792,8 +721,6 @@
     margin-bottom: 30px;
     font-size: 24px;
   }
-  
-  /* Footer */
   .main-footer {
     background-color: var(--secondary-color);
     color: var(--text-light);

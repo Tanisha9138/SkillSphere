@@ -53,11 +53,12 @@
   <div class="role-box">
     <h1>Welcome <%= username %>!</h1>
     <p>Select your role to continue:</p>
-    <form action="/dashboard" method="POST">
+    <form action="/user-details" method="POST">
       <input type="hidden" name="username" value="<%= username %>">
       <button type="submit" name="role" value="recruiter">Sign in as Recruiter</button>
       <button type="submit" name="role" value="freelancer">Sign in as Freelancer</button>
     </form>
+    
   </div>
 </body>
 </html>

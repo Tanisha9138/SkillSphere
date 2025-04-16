@@ -122,6 +122,17 @@ app.get('/search', (req, res) => {
     res.send(`<h1>Welcome ${username}! You are logged in as a ${role}.</h1>`);
   });
 
+  app.post('/user-details', (req, res) => {
+    const { username, role } = req.body;
+    res.render('userDetails', { username, role });
+  });
+  
+  app.post('/submit-details', (req, res) => {
+    const { username, role, name, address, phone, extraInfo } = req.body;
+    res.send(`<h2>Thank you ${name}!<br>You are registered as a ${role}.<br>Details submitted successfully.</h2>`);
+  });
+  
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
