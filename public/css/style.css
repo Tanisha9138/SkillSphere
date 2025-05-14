@@ -777,4 +777,29 @@
     color: var(--text-light);
   }
   
-  
+ select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  margin-bottom: 12px;
+  appearance: none;
+}
+
+select:invalid {
+  color: rgba(255,255,255,0.6);
+}
+
+option {
+  color: #222;
+}
+
+.form-group label[for="category"] {
+  color: #f0f0f0;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
