@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Select Role</title>
-  <link rel="stylesheet" href="/style.css" />
+  <title>Signup</title>
+  <link rel="stylesheet" href="/css/style1.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
       background-color: #0f0f0f;
@@ -14,27 +15,45 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin: 0;
     }
 
-    .role-box {
+    .signup-container {
       background: linear-gradient(135deg, #6a0dad, #2b1055);
       padding: 40px;
       border-radius: 20px;
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
-      text-align: center;
       width: 350px;
+      text-align: center;
     }
 
-    .role-box h1 {
+    .signup-container h1 {
       font-size: 28px;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
-    .role-box button {
-      display: block;
+    .signup-container input[type="text"],
+    .signup-container input[type="password"] {
       width: 100%;
       padding: 12px;
-      margin: 10px 0;
+      margin: 10px 0 20px 0;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .role-selection p {
+      margin-bottom: 15px;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .role-selection button {
+      display: inline-block;
+      width: 48%;
+      padding: 12px;
+      margin: 5px 1% 0 1%;
       border: none;
       border-radius: 10px;
       font-size: 16px;
@@ -44,21 +63,87 @@
       transition: all 0.3s ease;
     }
 
-    .role-box button:hover {
+    .role-selection button:hover {
       transform: scale(1.05);
+    }
+
+    .submit-btn {
+      margin-top: 25px;
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 10px;
+      border: none;
+      background: #00dbde;
+      color: #0f0f0f;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background: #6f00ff;
+      color: white;
+    }
+
+    .message {
+      margin-bottom: 15px;
+      color: #ff6b6b;
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
-  <div class="role-box">
-    <h1>Welcome <%= username %>!</h1>
-    <p>Select your role to continue:</p>
-    <form action="/user-details" method="POST">
-      <input type="hidden" name="username" value="<%= username %>">
-      <button type="submit" name="role" value="recruiter">Sign in as Recruiter</button>
-      <button type="submit" name="role" value="freelancer">Sign in as Freelancer</button>
+  <div class="signup-container">
+    <h1>Create an Account</h1>
+
+    <% if (typeof message !== 'undefined') { %>
+      <div class="message"><%= message %></div>
+    <% } %>
+
+    <form id="signupForm" action="/signup" method="POST">
+      <input type="text" name="username" placeholder="Username" value="<%= typeof username !== 'undefined' ? username : '' %>" required />
+      <input type="password" name="password" placeholder="Password" required />
+
+      <div class="role-selection">
+        <p>Select your role:</p>
+        <button type="button" id="recruiterBtn">Recruiter</button>
+        <button type="button" id="freelancerBtn">Freelancer</button>
+      </div>
+
+      <!-- Hidden input to store selected role -->
+      <input type="hidden" name="role" id="roleInput" required />
+
+      <button type="submit" class="submit-btn" disabled id="submitBtn">Sign Up</button>
     </form>
-    
   </div>
+
+  <script>
+    const recruiterBtn = document.getElementById('recruiterBtn');
+    const freelancerBtn = document.getElementById('freelancerBtn');
+    const roleInput = document.getElementById('roleInput');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function selectRole(role) {
+      roleInput.value = role;
+      submitBtn.disabled = false;
+
+      // Visual feedback for selected button
+      if (role === 'recruiter') {
+        recruiterBtn.style.background = '#00dbde';
+        recruiterBtn.style.color = '#0f0f0f';
+        freelancerBtn.style.background = 'linear-gradient(to right, #6f00ff, #00dbde)';
+        freelancerBtn.style.color = 'white';
+      } else {
+        freelancerBtn.style.background = '#00dbde';
+        freelancerBtn.style.color = '#0f0f0f';
+        recruiterBtn.style.background = 'linear-gradient(to right, #6f00ff, #00dbde)';
+        recruiterBtn.style.color = 'white';
+      }
+    }
+
+    recruiterBtn.addEventListener('click', () => selectRole('recruiter'));
+    freelancerBtn.addEventListener('click', () => selectRole('freelancer'));
+  </script>
 </body>
 </html>
